@@ -1,6 +1,0 @@
-WebApp project template
-=======================
-
-This is a template project for web applications that are build on top of Node.js/Express.js as
-web middleware, uses ExtJS as WebUI frontend, and CouchDb in the presistency layer.
-
