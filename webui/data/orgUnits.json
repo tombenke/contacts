@@ -1,0 +1,9 @@
+{ status: 0, startRow: 0, endRow: 7, totalRows: 8, data: [
+{"id":"4775a159-b546-4a53-881e-e9fbff848c91","key":"BW","path":"B&W","name":"Black & White Ltd.","unitType":"BW"},
+{"id":"4c3bbc90-689e-4272-b0ed-37831ae44b04","key":"BW.Production","path":"B&W / Production","name":"Finance & Controlling","unitType":"Production"},
+{"id":"4c3bbc90-689e-4272-b0ed-37831ae44b02","key":"BW.RD","path":"B&W / Research & Development","name":"Finance & Controlling","unitType":"Development"},
+{"id":"4c3bbc90-689e-4272-b0ed-37831ae44b05","key":"BW.Finance","path":"B&W / Finance","name":"Finance & Controlling","unitType":"Service"},
+{"id":"31e6c86a-2a0f-434d-99a5-47a3b381bd13","key":"BW.HR","path":"B&W / HR","name":"Human Resources","unitType":"Service"},
+{"id":"f794c97b-02fd-4f2e-8a95-cbba955d6be7","key":"BW.IT","path":"B&W / IT","name":"IT Services","unitType":"Service"},
+{"id":"dbf7a0c4-24cb-42b0-bf39-7c0e03139214","key":"BW.Logistics","path":"B&W / Logistics","name":"Logistics","unitType":"Service"},
+{"id":"15f24184-0ca7-4451-8be3-efd8be42d597","key":"BW.Marketing","path":"B&W / Marketing","name":"Marketing","unitType":"Service"}] }

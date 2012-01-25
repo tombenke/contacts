@@ -1,0 +1,20 @@
+{
+     "env" : {
+
+        "prod" : {
+            "db" : "http://admin:admin@localhost:5984/contacts"
+        },
+
+        "demo" : {
+            "db" : "http://admin:admin@localhost:5984/contacts"
+        },
+
+        "test" : {
+            "db" : "http://admin:admin@localhost:5984/contacts"
+        },
+
+        "default" : {
+            "db" : "http://admin:admin@localhost:5984/contacts"
+        }
+    }
+}

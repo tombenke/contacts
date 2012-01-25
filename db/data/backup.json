@@ -1,0 +1,5 @@
+{ "docs": [
+
+{"_id":"5e02ff5833d807c82115202294000c6a","type":"person","sex":"male","familyName":"Lee Hooker","surName":"John","isLocal":"false","company":"Black & White Ltd.","orgUnit":"BW.Production","email":"john.hooker@bw.com","mobile":"","phone":"","fax":"","web":"","comment":"","lastUpdate":"2012-01-25T06:27:26.176Z"}, 
+{"_id":"5e02ff5833d807c82115202294001679","type":"person","sex":"male","familyName":"Santana","surName":"Carlos","isLocal":"false","company":"B&W Ltd.","orgUnit":"BW.RD","email":"carlos.santana@bw.com","mobile":"","phone":"","fax":"","web":"","comment":"","lastUpdate":"2012-01-25T06:28:13.105Z"}
+]}

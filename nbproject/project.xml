@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.ant.freeform</type>
+    <configuration>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <name>WebApp Template</name>
+            <view>
+                <items>
+                    <source-folder style="tree">
+                        <label>Files</label>
+                        <location>.</location>
+                    </source-folder>
+                </items>
+            </view>
+        </general-data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word></word>
+        </spellchecker-wordlist>
+    </configuration>
+</project>

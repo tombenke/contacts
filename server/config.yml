@@ -1,0 +1,13 @@
+## This is the server config file
+useEnvironment: development
+
+environments:
+  development:
+    appName: Contact Manager (development version)
+    dbName: contacts
+    port: 3002
+
+  production:
+    appName: Contact Manager
+    dbName: contacts
+    port: 80

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{{title}}</title>
+
+        <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/buttons.css">
+        <script type="text/javascript" src="extjs/ext-debug.js"></script>
+        <script type="text/javascript" src="{{mainscript}}"></script>
+        <style>
+            .combo-result-item {
+                padding: 2px;
+                border:
+                    1px solid #FFFFFF;
+            }
+            .combo-name {
+                font-weight:
+                    bold;
+                font-size:
+                    11px;
+                background-color: #FFFF99;
+            }
+            .combo-full-address {
+                font-size:
+                    color:
+                    11px;
+                #666666;
+            }
+
+            /* Loading */
+            #loading-mask{
+                background-color:white;
+                height:100%;
+                position:absolute;
+                left:0;
+                top:0;
+                width:100%;
+                z-index:20000;
+            }
+            #loading{
+                height:auto;
+                position:absolute;
+                left:45%;
+                top:40%;
+                padding:2px;
+                z-index:20001;
+            }
+            #loading a {
+                color:#225588;
+            }
+            #loading .loading-indicator{
+                background:white;
+                color:#444;
+                font:bold 13px Helvetica, Arial, sans-serif;
+                height:auto;
+                margin:0;
+                padding:10px;
+            }
+            #loading-msg {
+                font-size: 10px;
+                font-weight: normal;
+            }
+
+            #logout {
+                position: absolute;
+                right: 1%;
+            }
+        </style>
+    </head>
+    <body>
+        {{{body}}}
+    </body>
+</html>

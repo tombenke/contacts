@@ -1,0 +1,39 @@
+<style type="text/css">
+.loginform {
+    width: 160px;
+    padding: 2px 2px 2px 2px;
+    vertical-align: middle;
+    margin: 175px auto 2px auto;
+    display:block;
+    height:auto;
+}
+
+p {
+    padding: 5px 12px 5px 12px;
+}
+
+fieldset {
+    border: 1px solid #AAAAAA;
+}
+</style>
+
+<div class="loginForm">
+    {{ message }}
+    <form method="post" action="/login">
+        <fieldset>
+                <legend>&nbsp;Login&nbsp;</legend>
+
+                <p>
+                    <label>Username:</label>
+                    <input type="text" name="username">
+                </p>
+                <p>
+                    <label>Password:</label>
+                    <input type="password" name="password">
+                </p>
+                <p>
+                    <input type="submit" value="Login">
+                </p>
+    </form>
+    </fieldset>
+</div>

@@ -1,0 +1,11 @@
+{
+    "name" : "webapp template",
+    "version" : "0.1.0",
+    "private" : true,
+
+    "dependencies" : {
+        "express" : "2.4.3",
+        "hbs" : "0.0.7",
+        "cradle" : "0.5.5"
+    }
+}
