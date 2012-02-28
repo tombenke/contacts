@@ -2,19 +2,14 @@ var request = require( 'request' );
 var express = require( 'express' );
 var crypto = require( 'crypto' );
 var index = require( './index.js' );
-var persons = require( './persons.js' );
 var diag = require( 'diag' );
 
-// Load the YAML parser module
-require( 'js-yaml' );
-
-// Load the YAML format config file
-var configFile = require( './config.yml' )[0];
-
-// Set the config parameters to the selected environment
-config = configFile.environments[ configFile.useEnvironment ];
+var config = require( './config.js' ).parameters;
+exports.config = config;
+console.log( config );
 
 var db = require( 'cdb' ).init( config.dbName );
+var persons = require( './persons.js' );
 
 var app = module.exports = express.createServer();
 

@@ -1,3 +1,5 @@
+var config = require('./config.js').parameters;
+
 function index( req, res )
 {
     res.render(
