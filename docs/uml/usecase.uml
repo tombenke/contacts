@@ -1,0 +1,38 @@
+@startuml
+title OOPS \n(use-case diagram)
+
+:manager: as manager
+:OOPS administrator: as administrator
+:local responsible: as localResponsible
+:OOPS: as oops
+
+(Analyze\n statistics) as statistics
+(Manage\n accounts) as manageAccounts
+(Manage\n contacts) as manageContacts
+(Manage\n Opportunities) as manageOpportunities
+(Export\n reports) as exportReports
+(Administer OOPS user accounts) as adminUsers
+(Backup and restore the OOPS DB) as backupRestore
+
+administrator -down-> adminUsers
+administrator -down-> backupRestore
+
+oops -up-> adminUsers
+oops -up-> backupRestore
+
+oops -down-> manageAccounts
+oops -down-> manageContacts
+oops -down-> manageOpportunities
+oops -down-> exportReports
+oops -down-> statistics
+
+localResponsible -up-> statistics
+localResponsible -up-> manageAccounts
+localResponsible -up-> manageContacts
+localResponsible -up-> manageOpportunities
+localResponsible -up-> exportReports
+
+manager -up-> statistics
+manager -up-> exportReports
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+title The components of the OOPS
+
+package "Web frontend" {
+    component [ExtJS\n MVC\n framework] as ExtJsMvc
+    component [Opportunity\n Manager\n MVC components] as OppManager
+    component [Store\n and\n Proxy] as Store
+
+    OppManager -down- ExtJsMvc
+    ExtJsMvc -down- Store
+    Store -down- OOPS_MW_IF : HTTP(S)
+}
+
+component "LDAP" as ldap
+interface "LDAP" as LDAP_IF
+ldap -left- LDAP_IF
+
+package "Web Middleware" {
+
+    interface "OOPS middleware-API\nRESTful services" as OOPS_MW_IF
+
+    component [Authentication] as Auth
+    component [URL Mapping] as UrlMapping
+    component [DB driver] as Db
+    component [Express] as Express
+
+    Auth -right- LDAP_IF
+    Auth -left- UrlMapping
+    Express -right- UrlMapping
+    OOPS_MW_IF -down- UrlMapping
+
+    package "OOPS Modules" {
+        component [ Opportunities ] as Opportunities
+        component [ Statistics ] as Statistics
+        component [ Persons ] as Persons
+        component [ Accounts ] as Accounts
+
+        UrlMapping -down- Opportunities
+        UrlMapping -down- Statistics
+        UrlMapping -down- Persons
+        UrlMapping -down- Accounts
+        Opportunities -down- Db
+        Statistics -down- Db
+        Persons -down- Db
+        Accounts -down- Db
+    }
+
+    Db -down- REPOSITORY_IF : HTTP(S)
+}
+
+package "Document store backend" {
+    interface "Document Store-API\nRESTful services" as REPOSITORY_IF
+
+    component [REST DB API] as REST_DB_API
+    component [map/reduce view engine] as ViewManagement
+    component [Document store] as docStore
+
+    REPOSITORY_IF -down- REST_DB_API
+    REST_DB_API -down- ViewManagement
+    ViewManagement -down- docStore
+}
+
+@enduml

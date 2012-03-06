@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="template" content="manual" />
+
+  <meta name="author" content="The NoSQL the RIA and the REST..." />
+  <meta name="author" content="Installation of the required tools and software" />
+
+  <meta name="date" content="January 13, 2012" />
+
+  <title>Tamás Benke</title>
+
+
+
+
+
+    <style type="text/css">
+        body {
+/*            width: 800px;
+            margin-left: auto;
+            margin-right: auto;*/
+            position: absolute;
+            left: 50%;
+            width: 1024px;
+            margin-left: -500px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide titlepage">
+  <h1 class="title">Tamás Benke</h1>
+  <p class="author">
+The NoSQL the RIA and the REST...<br/>Installation of the required tools and software
+  </p>
+
+    <p class="date">January 13, 2012</p>
+
+<hr />
+
+</div>
+
+<h1>Table of content</h1>
+<ul>
+<li><a href="#ide">IDE</a></li>
+<li><a href="#utilities">Utilities</a><ul>
+<li><a href="#curl">curl</a></li>
+</ul></li>
+<li><a href="#middleware">Middleware</a><ul>
+<li><a href="#node.js">Node.js</a></li>
+<li><a href="#npm">NPM</a><ul>
+<li><a href="#required-global-node-modules">Required global node modules</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#nosql-dbms">NoSQL DBMS</a><ul>
+<li><a href="#couchdb">CouchDB</a></li>
+<li><a href="#couchapp">CouchApp</a></li>
+</ul></li>
+<li><a href="#extjs-4.0-ria-framework">ExtJS 4.0 RIA framework</a></li>
+</ul>
+
+<hr />
+
+<h2 id="ide"><a href="#TOC">IDE</a></h2>
+<p>Any type of editor or IDE that supports syntax highlightes for JavaScript, YAML, JSON, HTML and CSS.</p>
+<p>We will use NetBeans 7.0, but Eclipse is also appropriate</p>
+<h2 id="utilities"><a href="#TOC">Utilities</a></h2>
+<h3 id="curl"><a href="#TOC">curl</a></h3>
+<p>curl is a command line tool for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.</p>
+<p>curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate, kerberos...), file transfer resume, proxy tunneling and a busload of other useful tricks.</p>
+<p>website: <a href="http://curl.haxx.se"><code class="url">http://curl.haxx.se</code></a></p>
+<p>installation (Unix, Win32): <a href="http://curl.haxx.se/docs/install.html"><code class="url">http://curl.haxx.se/docs/install.html</code></a></p>
+<p>on Ubuntu simply execute:</p>
+<pre><code>apt-get install curl
+</code></pre>
+<h2 id="middleware"><a href="#TOC">Middleware</a></h2>
+<h3 id="node.js"><a href="#TOC">Node.js</a></h3>
+<p>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.</p>
+<p>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+<p>we will use Node.js for the following purposes:</p>
+<ul>
+<li>web server and middleware</li>
+<li>unit-testing</li>
+<li>writing and running small command-line utilities</li>
+</ul>
+<p>website: <a href="http://nodejs.org"><code class="url">http://nodejs.org</code></a></p>
+<p>installation: <a href="http://nodejs.org/#download"><code class="url">http://nodejs.org/#download</code></a></p>
+<p>on Ubuntu, execute:</p>
+<pre><code>apt-get install nodejs
+</code></pre>
+<h3 id="npm"><a href="#TOC">NPM</a></h3>
+<p>npm is a package manager for node. You can use it to install and publish your node programs.</p>
+<p>It manages dependencies and does other cool stuff.</p>
+<p>we will use NPM to</p>
+<ul>
+<li>retrieve the required packages from central repositories</li>
+<li>create and deploy own packages</li>
+</ul>
+<p>website: <a href="http://npmjs.org/"><code class="url">http://npmjs.org/</code></a></p>
+<p>to install, execute the following:</p>
+<pre><code>curl http://npmjs.org/install.sh | sh
+</code></pre>
+<p>or</p>
+<pre><code>curl -O http://npmjs.org/install.sh
+# inspect file..
+sudo sh install.sh
+</code></pre>
+<p>The ~/.npmrc should contain the following if use it in the LSYH network, behind the proxy</p>
+<pre><code>registry = http://registry.npmjs.org/
+http_proxy = http://proxy:3128
+proxy = http://proxy:3128/
+</code></pre>
+<h4 id="required-global-node-modules"><a href="#TOC">Required global node modules</a></h4>
+<p>install the following modules into the global npm cache</p>
+<ul>
+<li>coffee-script</li>
+<li>express</li>
+<li>jasmine-node</li>
+<li>mocha</li>
+<li>should</li>
+</ul>
+<p>use the following command:</p>
+<pre><code>npm install -g coffee-script express # ... etc.
+</code></pre>
+<h2 id="nosql-dbms"><a href="#TOC">NoSQL DBMS</a></h2>
+<h3 id="couchdb"><a href="#TOC">CouchDB</a></h3>
+<p>Apache CouchDB is a document-oriented database that can be queried and indexed using JavaScript in a MapReduce fashion.</p>
+<p>CouchDB also offers incremental replication with bi-directional conflict detection and resolution.</p>
+<p>CouchDB provides a RESTful JSON API than can be accessed from any environment that allows HTTP requests.</p>
+<p>We will use CouchDB to</p>
+<ul>
+<li>store JSON format documents in it</li>
+<li>write map / reduce queries to find and retrieve the stored documents</li>
+</ul>
+<p>website: <a href="http://couchdb.apache.org/"><code class="url">http://couchdb.apache.org/</code></a></p>
+<p>installation: <a href="http://wiki.apache.org/couchdb/Installation"><code class="url">http://wiki.apache.org/couchdb/Installation</code></a></p>
+<p>see also:</p>
+<p><a href="http://tombenke.couchone.com/couchme/_design/couchme/index.html"><code class="url">http://tombenke.couchone.com/couchme/_design/couchme/index.html</code></a></p>
+<h3 id="couchapp"><a href="#TOC">CouchApp</a></h3>
+<p>The CouchApp command line tool is used to generate code templates in your application and to push your changes to an instance of couchdb, among other things.</p>
+<p>We will use CouchApp only to deploy the so called design documents (which holds the map / reduce queries) into the couchDB database</p>
+<p>website: <a href="http://couchapp.org/page/index"><code class="url">http://couchapp.org/page/index</code></a></p>
+<p>installation: <a href="http://couchapp.org/page/installing"><code class="url">http://couchapp.org/page/installing</code></a></p>
+<p>see also:</p>
+<p><a href="http://tombenke.couchone.com/couchme/_design/couchme/index.html"><code class="url">http://tombenke.couchone.com/couchme/_design/couchme/index.html</code></a></p>
+<h2 id="extjs-4.0-ria-framework"><a href="#TOC">ExtJS 4.0 RIA framework</a></h2>
+<p>Ext JS 4 JavaScript Framework is a Rich Apps that works in Every Browser</p>
+<p>We will use ExtJS to implement the client side RIA frontend.</p>
+<p>website: <a href="http://www.sencha.com/products/extjs/"><code class="url">http://www.sencha.com/products/extjs/</code></a></p>
+<p>download: <a href="http://www.sencha.com/products/extjs/download?page=a"><code class="url">http://www.sencha.com/products/extjs/download?page=a</code></a></p>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+!include stereotypes.iuml
+
+!define People
+
+package "people" #dddddd {
+
+    !ifndef showPeopleMembers
+        hide members
+    !endif
+
+    class Person <<ENTITY>> {
+        UUID _id
+        String type: "Person"
+        Date lastUpdate
+        String sex
+        String familyName
+        String surName
+        String company
+        UUID memberOf
+        ContactInfo officialContact
+        ContactInfo officialContact
+        String comment
+    }
+
+    class ContactInfo <<VO>> {
+        String email
+        String mobile
+        String phone
+        String fax
+        String web
+        String avatars
+    }
+
+    Person "1" *-- "1" ContactInfo : officialContact
+    Person "1" *-- "1" ContactInfo : privateContact
+
+    !ifdef OrgUnit
+        OrgUnit "1" --> "1" Person : head
+        Person "*" --> "1" OrgUnit : memberOf
+    !endif
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="template" content="manual" />
+
+$for(author)$
+  <meta name="author" content="$author$" />
+$endfor$
+
+$if(date)$
+  <meta name="date" content="$date$" />
+$endif$
+
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</title>
+
+
+$for(css)$
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="$css$" />
+$endfor$
+
+$if(math)$
+  $math$
+$endif$
+
+$for(header-includes)$
+  $header-includes$
+$endfor$
+
+    <style type="text/css">
+        body {
+/*            width: 800px;
+            margin-left: auto;
+            margin-right: auto;*/
+            position: absolute;
+            left: 50%;
+            width: 1024px;
+            margin-left: -500px;
+        }
+    </style>
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+
+$if(title)$
+<div class="slide titlepage">
+  <h1 class="title">$title$</h1>
+  <p class="author">
+$for(author)$$author$$sep$<br/>$endfor$
+  </p>
+
+  $if(date)$
+  <p class="date">$date$</p>
+$endif$
+
+<hr />
+
+</div>
+$endif$
+
+<h1>Table of content</h1>
+$toc$
+
+<hr />
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+</body>
+</html>

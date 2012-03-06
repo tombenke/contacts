@@ -1,0 +1,10 @@
+@startuml
+
+title People Management - Domain Model
+
+!define showPeopleMembers
+
+!include people.iuml
+!include orga.iuml
+
+@enduml
